@@ -53,7 +53,7 @@ def default_max_tokens(model: str) -> int:
     elif model in GPT_4_128K_MODELS:
         return 4096
     elif model in GPT_4O_MODELS:
-        return 4096
+        return 12288
 
 
 def are_functions_available(model: str) -> bool:
