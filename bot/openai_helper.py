@@ -199,7 +199,7 @@ class OpenAIHelper:
                 'messages': self.conversations[chat_id],
                 'temperature': self.config['temperature'],
                 'n': self.config['n_choices'],
-                'max_tokens': self.config['max_tokens'],
+                'max_completion_tokens': self.config['max_tokens'],
                 'presence_penalty': self.config['presence_penalty'],
                 'frequency_penalty': self.config['frequency_penalty'],
                 'stream': stream
