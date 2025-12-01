@@ -20,25 +20,6 @@ from tenacity import retry, stop_after_attempt, wait_fixed, retry_if_exception_t
 from utils import is_direct_result, encode_image, decode_image
 from plugin_manager import PluginManager
 
-# Models can be found here: https://platform.openai.com/docs/models
-GPT_CURRENT_MODEL = "gpt-5-nano"
-
-def default_max_tokens(model: str) -> int:
-    """
-    Gets the default number of max tokens for the given model.
-    :param model: The model name
-    :return: The default number of max tokens
-    """
-    return 4096
-
-
-def are_functions_available(model: str) -> bool:
-    """
-    Whether the given model supports functions
-    """
-    return False
-
-
 # Load translations
 parent_dir_path = os.path.join(os.path.dirname(__file__), os.pardir)
 translations_file_path = os.path.join(parent_dir_path, 'translations.json')
