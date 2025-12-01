@@ -601,7 +601,7 @@ class OpenAIHelper:
         try:
             encoding = tiktoken.encoding_for_model(model)
         except KeyError:
-            encoding = tiktoken.get_encoding("gpt-3.5-turbo")
+            encoding = tiktoken.get_encoding("gpt-4-turbo")
 
         tokens_per_message = 3
         tokens_per_name = 1
