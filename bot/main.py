@@ -4,7 +4,7 @@ import os
 from dotenv import load_dotenv
 
 from plugin_manager import PluginManager
-from openai_helper import OpenAIHelper, GPT_CURRENT_MODEL, default_max_tokens, are_functions_available
+from openai_helper import OpenAIHelper
 from telegram_bot import ChatGPTTelegramBot
 
 
@@ -27,9 +27,9 @@ def main():
         exit(1)
 
     # Setup configurations
-    model = os.environ.get('OPENAI_MODEL', GPT_CURRENT_MODEL)
-    functions_available = are_functions_available(model=model)
-    max_tokens_default = default_max_tokens(model=model)
+    model = os.environ.get('OPENAI_MODEL', 'gpt-5-nano')
+    functions_available = True
+    max_tokens_default = 4096
     openai_config = {
         'api_key': os.environ['OPENAI_API_KEY'],
         'show_usage': os.environ.get('SHOW_USAGE', 'false').lower() == 'true',
